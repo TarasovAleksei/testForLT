@@ -1,0 +1,110 @@
+.totalContainer {
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 673px;
+    background: #FFFFFF;
+    height: 977px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 673px;
+    height: 61px;
+    border-bottom: 1px solid #E4E4E4;
+}
+.title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: #424242;
+    margin-left: 20px;
+}
+
+.search {
+    width: 17.49px;
+    height: 17.49px;
+    color: #707070;
+    margin-right: 20px;
+}
+
+.titleTableContainer {
+    width: 673px;
+    height: 61px;
+    border-bottom: 1px solid #E4E4E4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.additionalTitleTableContainer {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 628px;
+}
+.titleItem {
+    font-size: 12px;
+    line-height: 120%;
+    color: #B7B7B7;
+}
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 673px;
+    height: 61px;
+    border-bottom: 1px solid #E4E4E4;
+}
+.titleForButton {
+    color: #F8BC3A;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    margin-left: 16px;
+    cursor: pointer;
+}
+.itemContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 673px;
+    height: 61px;
+}
+.activeItemContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 673px;
+    height: 61px;
+    background: #F8F8F8;
+}
+.sensorItem {
+    font-size: 12px;
+    line-height: 120%;
+    color: #424242;
+    font-weight: 400;
+}
+.sensorId {
+    margin-left: 20px;
+}
+.sensorDevice {
+    margin-left: 105px;
+}
+.sensorCondition {
+    margin-left: 172px;
+    width: 40px;
+    cursor: pointer;
+}
+.sensorValue {
+    margin-left: 162px;
+}
+.serialColor {
+    color: #F8BC3A;
+}
+
