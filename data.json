@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1234578",
+    "device": {"serial": "123456", "number": "SW1"},
+    "condition": true,
+    "currentValue": "+70°C",
+    "range": "от +10 до +90°C",
+    "model": "ESpD 417"
+  },
+  {
+    "id": "1234577",
+    "device": {"serial": "123456", "number": "SW1"},
+    "condition": false,
+    "currentValue": "+17°C",
+    "range": "от +10 до +30°C",
+    "model": "ESpD 420"
+  },{
+  "id": "1234576",
+  "device": {"serial": "123456", "number": "SW1"},
+  "condition": true,
+  "currentValue": "+19°C",
+  "range": "от +10 до +30°C",
+  "model": "ESpD 425"
+},{
+  "id": "1234575",
+  "device": {"serial": "123456", "number": "SW1"},
+  "condition": true,
+  "currentValue": "+10°C",
+  "range": "от +10 до +30°C",
+  "model": "ESpD 430"
+}
+]
