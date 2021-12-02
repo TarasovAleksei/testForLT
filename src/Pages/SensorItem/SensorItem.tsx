@@ -1,14 +1,20 @@
 import {Accordion, AccordionDetails, AccordionSummary, Switch} from '@mui/material';
-import React from 'react';
+import React, {FC} from 'react';
 import s from './SensorItem.module.css'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import {SensorType} from "../SensorList/sensorReducer";
 
 
-export const SensorItem = () => {
-    const [checked, setChecked] = React.useState<boolean>(true);
+interface SensorItemType {
+    sensors: SensorType[],
+    onToggle: (id: string, condition: boolean) => void,
+    activeIdSensor: string,
+}
+export const SensorItem:FC<SensorItemType> = ({onToggle, sensors,activeIdSensor}) => {
+    const index = sensors.findIndex(s=>s.id===activeIdSensor)
     const handleChangeSwitch = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setChecked(event.target.checked);
-    };
+        onToggle(sensors[index].id, event.target.checked)
+    }
     return (
         <div className={s.totalContainer}>
             <Accordion>
@@ -18,7 +24,7 @@ export const SensorItem = () => {
                     id="panel1bh-header"
                 >
                     <div className={s.titleItem}>
-                        12345678
+                        {sensors[index].id}
                     </div>
 
                 </AccordionSummary>
@@ -28,10 +34,10 @@ export const SensorItem = () => {
                             Состояние
                         </div>
                         <div className={s.toggleContainer}>
-                            <span className={s.toggle}>Вкл</span>
+                            <span className={s.toggle}>{sensors[index].condition? 'Вкл' : 'Выкл'}</span>
                             <Switch
                                 color={'primary'}
-                                checked={true}
+                                checked={sensors[index].condition}
                                 onChange={handleChangeSwitch}
                                 inputProps={{'aria-label': 'controlled'}}
                             />
@@ -39,7 +45,7 @@ export const SensorItem = () => {
                     </div>
                     <div className={s.deviceContainer}>
                         <div className={s.device}>
-                            <span className={s.deviceSerial}>123456</span> SW1
+                            <span className={s.deviceSerial}>{sensors[index].device.serial}</span> {sensors[index].device.number}
                         </div>
                     </div>
                     <div>
@@ -64,7 +70,7 @@ export const SensorItem = () => {
                                                 Текущее значение
                                             </div>
                                             <div className={s.value}>
-                                                +17°C
+                                                {sensors[index].currentValue}
                                             </div>
                                         </div>
                                         <div className={s.valueContainer}>
@@ -72,7 +78,7 @@ export const SensorItem = () => {
                                                 Диапазон
                                             </div>
                                             <div className={s.range}>
-                                                от +10 до +30°C
+                                                {sensors[index].range}
                                             </div>
                                         </div>
                                         <div className={s.valueContainer}>
@@ -80,7 +86,7 @@ export const SensorItem = () => {
                                                 Модель
                                             </div>
                                             <div className={s.range}>
-                                                ESpD 420
+                                                {sensors[index].model}
                                             </div>
                                         </div>
                                     </div>
@@ -88,7 +94,6 @@ export const SensorItem = () => {
                             </AccordionDetails>
                         </Accordion>
                     </div>
-
                 </AccordionDetails>
             </Accordion>
 

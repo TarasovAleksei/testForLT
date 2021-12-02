@@ -3,17 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import {App} from './App/App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter} from 'react-router-dom';
 import {ThemeProvider} from "@mui/material";
 import theme from "./common/theme";
+import {Provider} from "react-redux";
+import {store} from "./App/store";
 
 ReactDOM.render(
-    <BrowserRouter>
+    <Provider store={store}>
         <ThemeProvider theme={theme}>
             <App/>
         </ThemeProvider>
-    </BrowserRouter>
-    ,
+    </Provider>,
     document.getElementById('root')
 );
 
